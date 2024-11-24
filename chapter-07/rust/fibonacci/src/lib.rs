@@ -23,11 +23,11 @@ pub fn fib_memoization(n: u64) -> u64 {
 pub fn fib_iterative(n: u64) -> u64 {
     let mut current = 0;
     let mut next = 1;
-    for _ in 0..n {
+    (0..n).for_each(|_| {
         let prev = current;
         current = next;
-        next = prev + next;
-    }
+        next += prev;
+    });
     current
 }
 
